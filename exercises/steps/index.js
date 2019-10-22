@@ -17,6 +17,21 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function produceString(num) {
+  return Array(num)
+    .fill("#")
+    .join("");
+}
+function produceSpace(num) {
+  return Array(num)
+    .fill(" ")
+    .join("");
+}
+
+function steps(n) {
+  for (let i = 1; i <= n; i++) {
+    console.log(produceString(i) + produceSpace(n - i));
+  }
+}
 
 module.exports = steps;
