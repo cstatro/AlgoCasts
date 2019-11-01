@@ -26,6 +26,26 @@ class Node {
   }
 }
 
-class Tree {}
+class Tree {
+  constructor() {
+    this.root = null;
+  }
+  traverseBF(fn) {
+    let processArr = [this.root];
+    while (processArr.length > 0) {
+      fn(processArr[0]);
+      processArr = [...processArr, ...processArr[0].children];
+      processArr.shift();
+    }
+  }
+  traverseDF(fn) {
+    let processArr = [this.root];
+    while (processArr.length > 0) {
+      const first = processArr.shift();
+      fn(first);
+      processArr = [...first.children, ...processArr];
+    }
+  }
+}
 
 module.exports = { Tree, Node };
