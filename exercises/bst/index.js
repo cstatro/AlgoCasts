@@ -30,9 +30,9 @@ class Node {
   }
   contains(data) {
     if (this.data == data) {
-      return true;
+      return this;
     } else if (!this.left && !this.right) {
-      return false;
+      return null;
     } else if (data < this.data) {
       return this.left.contains(data);
     } else if (data > this.data) {
